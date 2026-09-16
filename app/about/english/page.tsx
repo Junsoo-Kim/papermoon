@@ -15,17 +15,19 @@ export default async function AboutEnglishPage() {
   const about: AboutEnglish | null = await client.fetch(query)
 
   return (
-    <main className="mx-auto max-w-3xl px-6 py-16">
-      <h1 className="text-3xl font-semibold tracking-tight">ABOUT_ENGLISH</h1>
+    <main className="mx-auto max-w-3xl px-6 py-20 sm:py-28">
+      <h1 className="font-serif text-3xl italic tracking-wide sm:text-4xl">
+        About English
+      </h1>
 
       {about?.bodyEn && (
-        <div className="prose prose-neutral mt-8 max-w-none">
+        <div className="prose prose-invert mt-10 max-w-none">
           <PortableText value={about.bodyEn} />
         </div>
       )}
 
       {!about?.bodyEn && (
-        <p className="mt-8 text-neutral-500">
+        <p className="mt-8 text-muted">
           English introduction has not been added yet. Add it in the
           &apos;단체 소개&apos; document in Studio.
         </p>
@@ -33,7 +35,7 @@ export default async function AboutEnglishPage() {
 
       <Link
         href="/about"
-        className="mt-12 inline-block text-sm tracking-widest text-neutral-500 underline underline-offset-4 hover:text-neutral-900"
+        className="mt-14 inline-block text-xs tracking-[0.15em] text-muted underline underline-offset-4 transition-colors hover:text-foreground"
       >
         ← ABOUT
       </Link>

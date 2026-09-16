@@ -30,11 +30,13 @@ export default async function GalleryPage() {
   })
 
   return (
-    <main className="mx-auto max-w-6xl px-6 py-16">
-      <h1 className="mb-10 text-3xl font-semibold tracking-tight">MEMORY</h1>
+    <main className="mx-auto max-w-6xl px-6 py-20 sm:py-28">
+      <h1 className="mb-12 font-serif text-3xl italic tracking-wide sm:text-4xl">
+        Memory
+      </h1>
 
       {items.length === 0 ? (
-        <p className="text-neutral-500">등록된 사진이 없습니다.</p>
+        <p className="text-muted">등록된 사진이 없습니다.</p>
       ) : (
         <GalleryGrid items={items} />
       )}

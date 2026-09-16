@@ -34,50 +34,54 @@ export default async function PerformanceDetailPage({
   if (!performance) notFound()
 
   return (
-    <main className="mx-auto max-w-3xl px-6 py-16">
+    <main className="mx-auto max-w-3xl px-6 py-20 sm:py-28">
       {performance.mainImage && (
-        <div className="relative mb-10 aspect-[16/9] w-full overflow-hidden bg-neutral-100">
+        <div className="relative mb-10 aspect-[16/9] w-full overflow-hidden bg-neutral-900">
           <Image
             src={urlFor(performance.mainImage).width(1600).url()}
             alt={performance.title}
             fill
+            sizes="(min-width: 768px) 768px, 100vw"
             className="object-cover"
             priority
           />
         </div>
       )}
 
-      <h1 className="text-3xl font-semibold tracking-tight">
+      <h1 className="font-serif text-3xl italic tracking-wide sm:text-4xl">
         {performance.title}
       </h1>
       {(performance.date || performance.venue) && (
-        <p className="mt-2 text-sm text-neutral-500">
+        <p className="mt-3 text-xs tracking-wide text-muted">
           {performance.date &&
             new Date(performance.date).toLocaleString('ko-KR')}
           {performance.venue ? ` · ${performance.venue}` : ''}
         </p>
       )}
       {performance.summary && (
-        <p className="mt-4 text-lg text-neutral-700">{performance.summary}</p>
+        <p className="mt-5 text-lg text-muted-foreground">
+          {performance.summary}
+        </p>
       )}
 
       {performance.body && (
-        <div className="prose prose-neutral mt-10 max-w-none">
+        <div className="prose prose-invert mt-10 max-w-none">
           <PortableText value={performance.body} />
         </div>
       )}
 
       {performance.gallery && performance.gallery.length > 0 && (
-        <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3">
+        <div className="mt-14 grid grid-cols-2 gap-4 sm:grid-cols-3">
           {performance.gallery.map((img, i) => (
             <div
               key={i}
-              className="relative aspect-square overflow-hidden bg-neutral-100"
+              className="relative aspect-square overflow-hidden bg-neutral-900"
             >
               <Image
                 src={urlFor(img).width(600).height(600).url()}
                 alt={`${performance.title} 갤러리 ${i + 1}`}
                 fill
+                sizes="(min-width: 640px) 33vw, 50vw"
                 className="object-cover"
               />
             </div>

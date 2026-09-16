@@ -18,6 +18,15 @@ export default defineConfig({
           .title('콘텐츠')
           .items([
             S.listItem()
+              .id('home')
+              .title('홈페이지')
+              .child(
+                S.document()
+                  .id('home')
+                  .schemaType('home')
+                  .documentId('home'),
+              ),
+            S.listItem()
               .id('about')
               .title('단체 소개')
               .child(

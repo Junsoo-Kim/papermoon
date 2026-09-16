@@ -2,22 +2,24 @@ import { instagramUrl } from '../site-config'
 
 export default function ContactPage() {
   return (
-    <main className="mx-auto max-w-3xl px-6 py-16">
-      <h1 className="mb-10 text-3xl font-semibold tracking-tight">CONTACT</h1>
+    <main className="mx-auto max-w-3xl px-6 py-20 sm:py-28">
+      <h1 className="mb-12 font-serif text-3xl italic tracking-wide sm:text-4xl">
+        Contact
+      </h1>
 
-      <dl className="space-y-6 text-neutral-700">
+      <dl className="space-y-8 text-foreground">
         <div>
-          <dt className="text-sm font-medium text-neutral-500">Email</dt>
-          <dd className="mt-1">contact@example.com</dd>
+          <dt className="text-xs tracking-[0.15em] text-muted">EMAIL</dt>
+          <dd className="mt-2 text-lg">contact@example.com</dd>
         </div>
         <div>
-          <dt className="text-sm font-medium text-neutral-500">Instagram</dt>
-          <dd className="mt-1">
+          <dt className="text-xs tracking-[0.15em] text-muted">INSTAGRAM</dt>
+          <dd className="mt-2 text-lg">
             <a
               href={instagramUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="underline underline-offset-4 hover:text-neutral-900"
+              className="underline underline-offset-4 transition-colors hover:text-accent"
             >
               @your_theater
             </a>
