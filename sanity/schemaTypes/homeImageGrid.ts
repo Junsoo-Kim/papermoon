@@ -19,8 +19,11 @@ export default defineType({
     defineField({
       name: 'images',
       title: '사진들',
+      description:
+        '파일 탐색기에서 여러 장을 한 번에 선택(Ctrl/Shift+클릭)해서 이 영역에 드래그하면 한 번에 추가됩니다.',
       type: 'array',
       of: [{ type: 'image', options: { hotspot: true } }],
+      options: { layout: 'grid' },
       validation: (r) => r.min(1),
     }),
   ],
